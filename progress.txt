@@ -1,0 +1,10 @@
+learning #1: at the time of writing, BOSH is the only production method for deploying, upgrading, scaling Concourse.
+   - womp womp, b/c BOSH doesn't work on Windows
+   - this means I'll have to get a Windows version working, then learn BOSH to deploy to AWS
+
+steps:
+
+1. launch ubuntu ec2 instance
+2. apt-get install virtualbox virtualbox-ext
+3. apt-get install vagrant
+4. git clone https://github.com/cloudfoundry/bosh-deployment ~/workspace/bosh-deployment
