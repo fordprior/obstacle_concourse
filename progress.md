@@ -4,7 +4,7 @@ an outline to keep me sane
 ### learning #1
 at the time of writing, BOSH is the only production method for deploying, upgrading, scaling Concourse to AWS
 * womp womp, b/c BOSH doesn't work on Windows (so I can't start out by deploying from my machine to AWS, which would be nice)
-* this means I'll have to configure BOSH on an linux-based EC2 instance, then deploy from that instance to my ALB
+* this means I'll have to configure BOSH on an linux-based EC2 instance or on a vagrant VM, then deploy from that instance to my ALB
 
 ## phase 1: get EC2 working w/ BOSH
 
