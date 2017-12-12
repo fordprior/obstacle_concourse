@@ -4,7 +4,7 @@ an outline to keep me sane
 ## phase 1: get BOSH working on my windows 7 OS
 1. install virtualbox 5.1 (newer versions have issues w/ vagrant 1.9.6)
 2. install vagrant 1.9.6 (older versions hang on windows)
-3. clone bosh-lite [repo](https://github.com/cloudfoundry/bosh-lite) and `vagrant up` from that directory
+3. clone bosh-lite [repo](https://github.com/cloudfoundry/bosh-lite) and `vagrant up --provider=virtualbox` from that directory
 4. `vagrant ssh` into your VM, which is ubuntu trusty tahr (you'll be at dir `/home/vagrant`)
 5. install the newer bosh CLI v2 & install dependencies as follows, using your Windows cmd:
 ```
