@@ -28,7 +28,11 @@ $ cd ~/deployments/vbox
 ```
    NOTE: At the end, use `bosh -v` and `VBoxManage --version` to make sure your versions are 2.x and 5.1, respectively.
    
-6. now you
+6. to create a deployment environment
+```
+$ wget https://github.com/concourse/concourse/releases/download/v3.5.0/concourse-lite.yml
+$ bosh create-env concourse-lite.yml
+```
 
 ## phase 2: set up AWS infrastructure if needed
 ## phase 3: deploy to AWS
