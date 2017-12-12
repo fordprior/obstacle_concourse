@@ -1,7 +1,7 @@
 # progress
 an outline to keep me sane
 
-## phase 1: get BOSH working
+## phase 1: get BOSH working on my windows 7 OS
 1. install virtualbox 5.1 (newer versions have issues w/ vagrant 1.9.6)
 2. install vagrant 1.9.6 (older versions hang on windows)
 3. use repo for windows and bosh-lite and `vagrant up` from that directory
