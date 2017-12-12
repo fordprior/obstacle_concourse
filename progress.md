@@ -44,5 +44,26 @@ $ wget https://github.com/concourse/concourse/releases/download/v3.5.0/concourse
 $ bosh create-env concourse-lite.yml
 ```
 
+...and getting this error:
+```
+Deploying:
+  Creating instance 'concourse/0':
+    Creating VM:
+      Creating vm with stemcell cid 'sc-ff745b3d-f2b9-49bc-685d-e2cce1e4e691':
+        CPI 'create_vm' method responded with error: CmdError{"type":"Bosh::Clou
+ds::CloudError","message":"Creating VM with agent ID '{{1f4ed777-2a40-4293-40fe-
+acdc3fecdab9}}': Starting VM: Retried '30' times: Running command: 'VBoxManage s
+tartvm vm-f893f1a4-adea-48ac-50ea-38dd13aae3f2 --type headless', stdout: 'Waitin
+g for VM \"vm-f893f1a4-adea-48ac-50ea-38dd13aae3f2\" to power on...\n', stderr:
+'VBoxManage: error: VT-x is not available (VERR_VMX_NO_VMX)\nVBoxManage: error:
+Details: code NS_ERROR_FAILURE (0x80004005), component ConsoleWrap, interface IC
+onsole\n': exit status 1","ok_to_retry":false}
+```
+
+```
+$ wget https://github.com/concourse/concourse/releases/download/v3.5.0/concourse-lite.yml
+$ bosh create-env concourse-lite.yml
+```
+
 ## phase 2: set up AWS infrastructure if needed
 ## phase 3: deploy to AWS
