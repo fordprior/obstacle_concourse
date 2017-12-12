@@ -5,15 +5,29 @@ an outline to keep me sane
 1. install virtualbox 5.1 (newer versions have issues w/ vagrant 1.9.6)
 2. install vagrant 1.9.6 (older versions hang on windows)
 3. use repo for windows and bosh-lite and `vagrant up` from that directory
-4. `vagrant ssh` into your VM, which is ubuntu trusty tahr (woot!)
-5. install the newer bosh CLI v2 & install dependencies as follows:
+4. `vagrant ssh` into your VM, which is ubuntu trusty tahr
+5. install the newer bosh CLI v2 & install dependencies as follows, starting from `/home/vagrant`:
 ```
 $ wget https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-2.0.45-linux-amd64
-$ chmod +x ~/Downloads/bosh-cli-*
-$ sudo mv ~/Downloads/bosh-cli-* /usr/local/bin/bosh
+$ sudo chmod +x bosh-cli-2.0.45-linux-amd64
+$ sudo mv bosh-cli* /usr/local/bin/bosh
 $ sudo apt-get update
 $ sudo apt-get install -y build-essential zlibc zlib1g-dev ruby ruby-dev openssl libxslt-dev libxml2-dev libssl-dev libreadline6 libreadline6-dev libyaml-dev libsqlite3-dev sqlite3
+$ cd /etc/sources
+$ echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> sources.list
+$ wget https://www.virtualbox.org/download/oracle_vbox.asc
+$ sudo apt-key add oracle_vbox.asc
+$ apt-get update
+$ apt-get install virtualbox-5.1
+$ apt-get install dkms
+$ apt-get install git
+$ cd /home/vagrant
+$ git clone https://github.com/cloudfoundry/bosh-deployment ~/workspace/bosh-deployment
+$ mkdir -p ~/deployments/vbox
+$ cd ~/deployments/vbox
 ```
+   NOTE: At the end, use `bosh -v` and `VBoxManage --version` to make sure your versions are 2.x and 5.1, respectively.
+   
 6. now you
 
 ## phase 2: set up AWS infrastructure if needed
