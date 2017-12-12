@@ -60,10 +60,5 @@ Details: code NS_ERROR_FAILURE (0x80004005), component ConsoleWrap, interface IC
 onsole\n': exit status 1","ok_to_retry":false}
 ```
 
-```
-$ wget https://github.com/concourse/concourse/releases/download/v3.5.0/concourse-lite.yml
-$ bosh create-env concourse-lite.yml
-```
-
 ## phase 2: set up AWS infrastructure if needed
 ## phase 3: deploy to AWS
