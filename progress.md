@@ -5,8 +5,8 @@ an outline to keep me sane
 1. install virtualbox 5.1 (newer versions have issues w/ vagrant 1.9.6)
 2. install vagrant 1.9.6 (older versions hang on windows)
 3. clone bosh-lite [repo](https://github.com/cloudfoundry/bosh-lite) and `vagrant up` from that directory
-4. `vagrant ssh` into your VM, which is ubuntu trusty tahr
-5. install the newer bosh CLI v2 & install dependencies as follows, starting from `/home/vagrant`:
+4. `vagrant ssh` into your VM, which is ubuntu trusty tahr (you'll be at dir `/home/vagrant`)
+5. install the newer bosh CLI v2 & install dependencies as follows, using your Windows cmd:
 ```
 $ wget https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-2.0.45-linux-amd64
 $ sudo chmod +x bosh-cli-2.0.45-linux-amd64
