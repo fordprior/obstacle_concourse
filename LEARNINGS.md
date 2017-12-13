@@ -9,7 +9,7 @@ at the time of writing, BOSH is the only production method for deploying, upgrad
 ## learning #3.1
 I know some people :heart: it but vagrant is kind of a pain in the neck, at least from what I learned after hacking at it for an hour. why?
 * some of the unix-based BOSH commands didn't work on my cygwin wrapper but did on my windows cmd, and then some other way around (chaos)
-* I would have to install vagrant, then spawn vagrant deploys from a vagrant environment, which sounded complicated
+* I would have to install vagrant+virtualbox, then spawn BOSH+virtualbox deploys from a vagrant environment, which sounded complicated
 
 ## learning 3.2
 So, running virtualbox on aws EC2 is a neat idea (called "cascading"), but it's not possible. The reason is that virtualbox (or any modern hypervisor) is hardware-assisted meaning it needs to run on bare-metal processes and instruction sets, but AWS doesn't allow this for a couple possible reasons I can think of:
