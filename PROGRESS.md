@@ -94,9 +94,11 @@ onsole\n': exit status 1","ok_to_retry":false}
  * To "authenticate my target" I used the `fly login` command: `fly -t tutorial login -c http://127.0.0.1:8080`
  
  3. At this point, it said to hit up [this tutorial](https://concoursetutorial.com/basics/task-hello-world/) to "kick the tires":
- * ```git clone https://github.com/starkandwayne/concourse-tutorial
-cd concourse-tutorial/tutorials/basic/task-hello-world
-fly -t tutorial execute -c task_hello_world.yml```
+ * get the repo for this task and `cd` into it: 
+    `git clone https://github.com/starkandwayne/concourse-tutorial`
+    `cd concourse-tutorial/tutorials/basic/task-hello-world`
+ * use the CI service I created in Step 1 to actually run the `fly execute` command
+    `fly -t tutorial execute -c task_hello_world.yml`
  *  
  
  
