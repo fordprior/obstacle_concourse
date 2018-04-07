@@ -59,6 +59,39 @@ g for VM \"vm-f893f1a4-adea-48ac-50ea-38dd13aae3f2\" to power on...\n', stderr:
 Details: code NS_ERROR_FAILURE (0x80004005), component ConsoleWrap, interface IC
 onsole\n': exit status 1","ok_to_retry":false}
 ```
+ ## phase 1.2: throw my Windows machine in the trash and try on a Mac
+ Yep, you heard that right. I got a Mac with OSX 10.13.4, which has VirtualBox 5.2.8, and Docker 18.03.0-ce. So far, everything has been stupid easy:
+ 1. First, I followed the instructions from the [Bosh website](https://bosh.io/docs/cli-v2#install) to get the deployment environment working:
+ * `wget -O ~/Downloads https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-3.0.1-darwin-amd64`
+ * `chmod +x ~/Downloads/bosh-cli-*`
+ * `sudo mv ~/Downloads/bosh-cli-* /usr/local/bin/bosh`
+ * ...and after running `bosh -v` to make sure version 3.0-something was installed, I created my environment:
+  ```
+  bosh create-env ~/workspace/bosh-deployment/bosh.yml \
+  --state state.json \
+  --vars-store ./creds.yml \
+  -o ~/workspace/bosh-deployment/virtualbox/cpi.yml \
+  -o ~/workspace/bosh-deployment/virtualbox/outbound-network.yml \
+  -o ~/workspace/bosh-deployment/bosh-lite.yml \
+  -o ~/workspace/bosh-deployment/jumpbox-user.yml \
+  -v director_name=vbox \
+  -v internal_ip=192.168.56.6 \
+  -v internal_gw=192.168.56.1 \
+  -v internal_cidr=192.168.56.0/24 \
+  -v network_name=vboxnet0 \
+  -v outbound_network_name=NatNetwork
+  ```
+  * Note: I don't think this last step did anything? Anyways I moved on to a different tutorial; I shouldn't have done it in the first place.
+ 
+ 2. Next, I went to the [Concourse site](https://concourse-ci.org/) and started following their instructions:
+ * `wget https://concourse-ci.org/docker-compose.yml` and `docker-compose up`
+ * This served up a web app on localhost at `127.0.0.1:8080`, where I clicked a Mac icon to download the "CLI tools" (not sure what this entailed, but it gave me a `fly` file which I `chmod +x`'d and placed in my PATH)
+ * Note: Concourse is primarily driven from the command-line (there is no GUI config wizard) using this `fly` CLI.
+ * To "authenticate my target" I used the `fly login` command: `fly -t tutorial login -c http://127.0.0.1:8080`
+ 
+ 
+ 
+
 
 ## phase 2: set up AWS infrastructure if needed
 ## phase 3: deploy to AWS
