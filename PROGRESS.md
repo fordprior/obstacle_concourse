@@ -86,19 +86,28 @@ onsole\n': exit status 1","ok_to_retry":false}
   * Note: I don't think this last step did anything? Anyways I moved on to a different tutorial; I shouldn't have done it in the first place.
  
  2. Next, I went to the [Concourse site](https://concourse-ci.org/) and started following their instructions:
- * `wget https://concourse-ci.org/docker-compose.yml` and `docker-compose up` to start my CI service locally
+ * start my CI service locally:
+    ```
+    wget https://concourse-ci.org/docker-compose.yml
+    docker-compose up
+    ```
  ** note1: I did a `docker ps` and saw that it created two containers, PostgresSQL (db) and councourse/councourse (web)
  ** note2: I just left open this window, because it'll show the traffic coming into my CI service
  * The web app was served at `127.0.0.1:8080`, where I clicked a Mac icon to download the "CLI tools" (not sure what this entailed, but it gave me a `fly` file which I `chmod +x`'d and placed in my PATH)
  * Note: Concourse is primarily driven from the command-line (there is no GUI config wizard) using this `fly` CLI.
- * To "authenticate my target" I used the `fly login` command: `fly -t tutorial login -c http://127.0.0.1:8080`
+ * To "authenticate my target" I used the `fly login` command:
+   ```
+   fly -t tutorial login -c http://127.0.0.1:8080
+   ```
  
  3. At this point, it said to hit up [this tutorial](https://concoursetutorial.com/basics/task-hello-world/) to "kick the tires":
  * get the repo for this task and `cd` into it: 
-    `git clone https://github.com/starkandwayne/concourse-tutorial`
-    `cd concourse-tutorial/tutorials/basic/task-hello-world`
- * use the CI service I created in Step 1 to actually run the `fly execute` command
-    `fly -t tutorial execute -c task_hello_world.yml`
+    ```
+    git clone https://github.com/starkandwayne/concourse-tutorial
+    cd concourse-tutorial/tutorials/basic/task-hello-world
+    ```
+ * use the CI service I created in Step 1 to actually run the `fly execute` command:
+    ```fly -t tutorial execute -c task_hello_world.yml```
  *  
  
  
