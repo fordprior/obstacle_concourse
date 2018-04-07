@@ -59,6 +59,8 @@ g for VM \"vm-f893f1a4-adea-48ac-50ea-38dd13aae3f2\" to power on...\n', stderr:
 Details: code NS_ERROR_FAILURE (0x80004005), component ConsoleWrap, interface IC
 onsole\n': exit status 1","ok_to_retry":false}
 ```
+...and then I sat on this error for like 3 months with no progress. ¯\_(ツ)_/¯
+
  ## phase 1.2: throw my Windows machine in the trash and try on a Mac
  Yep, you heard that right. I got a Mac with OSX 10.13.4, which has VirtualBox 5.2.8, and Docker 18.03.0-ce. So far, everything has been stupid easy:
  1. First, I followed the instructions from the [Bosh website](https://bosh.io/docs/cli-v2#install) to get the deployment environment working:
