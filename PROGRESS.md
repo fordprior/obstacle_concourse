@@ -92,12 +92,12 @@ onsole\n': exit status 1","ok_to_retry":false}
  
  ### 3. At this point, it said to hit up [this tutorial](https://concoursetutorial.com/basics/task-hello-world/) to "kick the tires":
 Get the repo for this task and use the CI service I created in Step 1 to actually run the `fly execute` command: 
-    ```
+   
     git clone https://github.com/starkandwayne/concourse-tutorial
     cd concourse-tutorial/tutorials/basic/task-hello-world
     fly -t tutorial execute -c task_hello_world.yml
-    ```
-    * Note: I can open up the UI and click on build/1 and see the following output:
+    
+   * Note: I can open up the UI and click on build/1 and see the following output:
     ![screenshot](https://concoursetutorial.com/images/build-output-hello-world.png)
 
 ## phase 2: set up AWS infrastructure if needed
