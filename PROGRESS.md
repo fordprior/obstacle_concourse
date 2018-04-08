@@ -2,49 +2,7 @@
 an outline to keep me sane
 
 ## phase 1: get BOSH working on my windows 7 OS
-1. install virtualbox 5.1 (newer versions have issues w/ vagrant 1.9.6)
-2. install vagrant 1.9.6 (older versions hang on windows)
-   
-      Some helpful commands:
-      ```
-      vagrant up
-      vagrant ssh
-      vagrant suspend
-      vagrant global-status
-      vagrant destroy
-      ```
-         
-3. clone bosh-lite [repo](https://github.com/cloudfoundry/bosh-lite) and `vagrant up --provider=virtualbox` from that directory
-4. `vagrant ssh` into your VM, which is ubuntu trusty tahr (you'll be at dir `/home/vagrant`)
-5. install the newer bosh CLI v2 & install dependencies as follows, using your Windows cmd:
-```
-$ wget https://s3.amazonaws.com/bosh-cli-artifacts/bosh-cli-2.0.45-linux-amd64
-$ sudo chmod +x bosh-cli-2.0.45-linux-amd64
-$ sudo mv bosh-cli* /usr/local/bin/bosh
-$ sudo apt-get update
-$ sudo apt-get install -y build-essential zlibc zlib1g-dev ruby ruby-dev openssl libxslt-dev libxml2-dev libssl-dev libreadline6 libreadline6-dev libyaml-dev libsqlite3-dev sqlite3
-$ cd /etc/sources
-$ echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> sources.list
-$ wget https://www.virtualbox.org/download/oracle_vbox.asc
-$ sudo apt-key add oracle_vbox.asc
-$ apt-get update
-$ apt-get install virtualbox-5.1
-$ apt-get install dkms
-$ apt-get install git
-$ cd /home/vagrant
-$ git clone https://github.com/cloudfoundry/bosh-deployment ~/workspace/bosh-deployment
-$ mkdir -p ~/deployments/vbox
-$ cd ~/deployments/vbox
-```
-   NOTE: At the end, use `bosh -v` and `VBoxManage --version` to make sure your versions are 2.x and 5.1, respectively.
-   
-6. to create a deployment environment
-```
-$ wget https://github.com/concourse/concourse/releases/download/v3.5.0/concourse-lite.yml
-$ bosh create-env concourse-lite.yml
-```
-
-...and getting this error:
+1. ...and get this error:
 ```
 Deploying:
   Creating instance 'concourse/0':
@@ -59,7 +17,7 @@ g for VM \"vm-f893f1a4-adea-48ac-50ea-38dd13aae3f2\" to power on...\n', stderr:
 Details: code NS_ERROR_FAILURE (0x80004005), component ConsoleWrap, interface IC
 onsole\n': exit status 1","ok_to_retry":false}
 ```
-...and then I sat on this error for like 3 months with no progress. ¯\_(ツ)_/¯
+...and then sit on this error for like 3 months with no progress. ¯\_(ツ)_/¯
 
  ## phase 1.2: throw my Windows machine in the trash and try on a Mac
  Yep, you heard that right. I got a Mac with OSX 10.13.4, which has VirtualBox 5.2.8, and Docker 18.03.0-ce. So far, everything has been stupid easy:
@@ -99,6 +57,30 @@ Get the repo for this task and use the CI service I created in Step 1 to actuall
     
    * Note: I can open up the UI and click on build/1 and see the following output:
     ![screenshot](https://concoursetutorial.com/images/build-output-hello-world.png)
+    
+   * Yay! Super cool. Now `docker-compose down` to stop my CI service for now while I focus on Ruby app stuff.
 
-## phase 2: set up AWS infrastructure if needed
+## phase 2: get a Ruby app working
+   
+  ### First, I found a good Ruby/CentOS base image [here](https://hub.docker.com/r/centos/ruby-24-centos7/) and tried it out:
+  ```
+   brew install source-to-image
+   s2i build https://github.com/sclorg/s2i-ruby-container.git --context-dir=2.4/test/puma-test-app/ centos/ruby-24-centos7 ruby-sample-app
+   docker run -p 8080:8080 ruby-sample-app
+   curl 127.0.0.1:8080
+   ```
+   OK, so that works. Great.
+   ### Fork this [parent repo](https://github.com/sclorg/s2i-ruby-container) for the Ruby/CentOS image so I can modify it for my specs
+   To start, I made the following changes:
+      1. I renamed it so people wouldn't get confused
+      2. I slimmed it down to focus on CentOS and Ruby v24
+      3. I added some Concourse stuff
+      
+      
+      
+   
+   
+
+
+set up AWS infrastructure if needed
 ## phase 3: deploy to AWS
