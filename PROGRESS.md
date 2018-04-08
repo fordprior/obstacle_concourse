@@ -80,7 +80,7 @@ onsole\n': exit status 1","ok_to_retry":false}
     * note2: I just left open this window, because it'll show the traffic coming into my CI service
     
     The web app was served at `127.0.0.1:8080`:
- ![screenshot](https://concoursetutorial.com/images/build-output-hello-world.png)
+ ![screenshot](https://assets.digitalocean.com/articles/concourseci_install_1604/placeholder_interface.png)
  
  2. I clicked a Mac icon to download the "CLI tools", `chmod +x`'d the `fly` file it gave me and placed it in my PATH)
  3. To "authenticate my target" I used the `fly login` command:
@@ -97,7 +97,8 @@ Get the repo for this task and use the CI service I created in Step 1 to actuall
     cd concourse-tutorial/tutorials/basic/task-hello-world
     fly -t tutorial execute -c task_hello_world.yml
     ```
-    * Note:
+    * Note: I can open up the UI and click on build/1 and see the following output:
+    ![screenshot](https://concoursetutorial.com/images/build-output-hello-world.png)
 
 ## phase 2: set up AWS infrastructure if needed
 ## phase 3: deploy to AWS
