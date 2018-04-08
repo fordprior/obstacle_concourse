@@ -76,12 +76,12 @@ Get the repo for this task and use the CI service I created in Step 1 to actuall
       1. I renamed it so people wouldn't get confused
       2. I slimmed it down to focus on CentOS and Ruby v24
       3. I added some Concourse stuff
-      
+   
+   This is what it looks like [now](https://github.com/fordprior/s2i-ruby-container).
       
       
    
-   
+    
 
-
-set up AWS infrastructure if needed
+## phase 4: set up AWS infrastructure if needed
 ## phase 3: deploy to AWS
