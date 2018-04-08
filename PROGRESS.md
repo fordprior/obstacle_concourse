@@ -69,23 +69,6 @@ onsole\n': exit status 1","ok_to_retry":false}
    chmod +x ~/Downloads/bosh-cli-*
    sudo mv ~/Downloads/bosh-cli-* /usr/local/bin/bosh
    ```
- ...and after running `bosh -v` to make sure version 3.0-something was installed, I created my environment:
-  ```
-  bosh create-env ~/workspace/bosh-deployment/bosh.yml \
-  --state state.json \
-  --vars-store ./creds.yml \
-  -o ~/workspace/bosh-deployment/virtualbox/cpi.yml \
-  -o ~/workspace/bosh-deployment/virtualbox/outbound-network.yml \
-  -o ~/workspace/bosh-deployment/bosh-lite.yml \
-  -o ~/workspace/bosh-deployment/jumpbox-user.yml \
-  -v director_name=vbox \
-  -v internal_ip=192.168.56.6 \
-  -v internal_gw=192.168.56.1 \
-  -v internal_cidr=192.168.56.0/24 \
-  -v network_name=vboxnet0 \
-  -v outbound_network_name=NatNetwork
-  ```
-  * Note: I don't think this last step did anything? Anyways I moved on to a different tutorial; I shouldn't have done it in the first place.
  
  ### 2. Next, I went to the [Concourse site](https://concourse-ci.org/) and started following their instructions:
  1. start my CI service locally:
@@ -95,7 +78,11 @@ onsole\n': exit status 1","ok_to_retry":false}
     ```
     * note1: I did a `docker ps` and saw that it created two containers, PostgresSQL (db) and councourse/councourse (web)
     * note2: I just left open this window, because it'll show the traffic coming into my CI service
- 2. The web app was served at `127.0.0.1:8080`, where I clicked a Mac icon to download the "CLI tools" (not sure what this entailed, but it gave me a `fly` file which I `chmod +x`'d and placed in my PATH)
+    
+    The web app was served at `127.0.0.1:8080`:
+ ![screenshot](https://concoursetutorial.com/images/build-output-hello-world.png)
+ 
+ 2. I clicked a Mac icon to download the "CLI tools", `chmod +x`'d the `fly` file it gave me and placed it in my PATH)
  3. To "authenticate my target" I used the `fly login` command:
    ```
    fly -t tutorial login -c http://127.0.0.1:8080
@@ -111,9 +98,6 @@ Get the repo for this task and use the CI service I created in Step 1 to actuall
     fly -t tutorial execute -c task_hello_world.yml
     ```
     * Note:
- 
- 
-
 
 ## phase 2: set up AWS infrastructure if needed
 ## phase 3: deploy to AWS
