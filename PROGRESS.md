@@ -72,6 +72,7 @@ Get the repo for this task and use the CI service I created in Step 1 to actuall
    OK, so that works. Great.
    ### 2. Fork this [parent repo](https://github.com/sclorg/s2i-ruby-container) for the Ruby/CentOS image so I can modify it for my specs
    To start, I made the following changes:
+      
       1. I renamed it so people wouldn't get confused
       2. I slimmed it down to focus on CentOS and Ruby v24
       3. I added some Concourse stuff
