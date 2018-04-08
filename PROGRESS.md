@@ -62,7 +62,7 @@ Get the repo for this task and use the CI service I created in Step 1 to actuall
 
 ## phase 2: get a Ruby app working
    
-  ### First, I found a good Ruby/CentOS base image [here](https://hub.docker.com/r/centos/ruby-24-centos7/) and tried it out:
+  ### 1. First, I found a good Ruby/CentOS base image [here](https://hub.docker.com/r/centos/ruby-24-centos7/) and tried it out:
   ```
    brew install source-to-image
    s2i build https://github.com/sclorg/s2i-ruby-container.git --context-dir=2.4/test/puma-test-app/ centos/ruby-24-centos7 ruby-sample-app
@@ -70,7 +70,7 @@ Get the repo for this task and use the CI service I created in Step 1 to actuall
    curl 127.0.0.1:8080
    ```
    OK, so that works. Great.
-   ### Fork this [parent repo](https://github.com/sclorg/s2i-ruby-container) for the Ruby/CentOS image so I can modify it for my specs
+   ### 2. Fork this [parent repo](https://github.com/sclorg/s2i-ruby-container) for the Ruby/CentOS image so I can modify it for my specs
    To start, I made the following changes:
       1. I renamed it so people wouldn't get confused
       2. I slimmed it down to focus on CentOS and Ruby v24
