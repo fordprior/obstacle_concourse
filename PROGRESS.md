@@ -103,15 +103,14 @@ onsole\n': exit status 1","ok_to_retry":false}
    note: Concourse is primarily driven from the command-line (there is no GUI config wizard) using this `fly` CLI.
 
  
- ### At this point, it said to hit up [this tutorial](https://concoursetutorial.com/basics/task-hello-world/) to "kick the tires":
- * get the repo for this task and `cd` into it: 
+ ### 3. At this point, it said to hit up [this tutorial](https://concoursetutorial.com/basics/task-hello-world/) to "kick the tires":
+Get the repo for this task and use the CI service I created in Step 1 to actually run the `fly execute` command: 
     ```
     git clone https://github.com/starkandwayne/concourse-tutorial
     cd concourse-tutorial/tutorials/basic/task-hello-world
+    fly -t tutorial execute -c task_hello_world.yml
     ```
- * use the CI service I created in Step 1 to actually run the `fly execute` command:
-    ```fly -t tutorial execute -c task_hello_world.yml```
- *  
+    * Note:
  
  
 
