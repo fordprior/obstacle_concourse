@@ -10,10 +10,8 @@ COPY /app/ /app
 
 WORKDIR /app
 
-RUN gem install bundler
+RUN gem install bundler sinatra thin
 
 RUN bundle install
-
-CMD bundle exec puma -C config/puma.rb
 
 CMD ["bundle", "exec", "rackup", "--port=8080"]
