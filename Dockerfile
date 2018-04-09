@@ -2,11 +2,9 @@ FROM centos:latest
 
 EXPOSE 8080
 
-RUN yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel \
-   libyaml-devel libffi-devel openssl-devel make \
-   bzip2 autoconf automake libtool bison iconv-devel sqlite-devel
-   
-RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+RUN yum install -y which tar patch libyaml-devel libffi-devel glibc-headers autoconf gcc-c++ glibc-devel readline-devel zlib-devel openssl-devel bzip2 automake libtool bison
+RUN curl -L get.rvm.io | bash -s stable   
+RUN gpg2 --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
 RUN curl -L get.rvm.io | bash -s stable
 RUN source /etc/profile.d/rvm.sh
 RUN rvm reload
