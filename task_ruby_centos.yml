@@ -3,8 +3,8 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: centos/ruby-24-centos7}
+  source: {repository: fordprior/obstacle_concourse}
 
 run:
-  path: 
-  args: ['install', 'ruby']
+  path: ls
+  args: [-l]
