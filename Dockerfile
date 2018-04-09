@@ -1,5 +1,19 @@
-FROM centos/ruby-24-centos7:latest
+FROM centos:latest
 
-RUN echo "Hello world"
+EXPOSE 8080
 
-CMD['bin/bash']
+RUN yum install -y ruby
+
+RUN mkdir /app
+
+COPY /app/ /app
+
+WORKDIR /app
+
+RUN gem install bundler
+
+RUN bundle install
+
+CMD bundle exec puma -C config/puma.rb
+
+CMD ["bundle", "exec", "rackup", "--port=8080"]
