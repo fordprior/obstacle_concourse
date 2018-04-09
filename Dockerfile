@@ -2,7 +2,7 @@ FROM centos:latest
 
 EXPOSE 8080
 
-RUN yum install -y ruby
+RUN yum install -y ruby-2.4
 
 RUN mkdir /app
 
