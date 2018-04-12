@@ -1,0 +1,4 @@
+name: obstacle_concourse
+memory: 128M
+random-route: true
+path: .

@@ -5,16 +5,15 @@ image_resource:
   type: docker-image
   source: {repository: fordprior/ruby_sample_app}
 
-# inputs:
-# - name: task-scripts
+inputs:
+- name: task-scripts
 
 run:
-  path: /bin/bash
+  dir: ~/specs
+  path: bundle
   args:
-  - -c
-  - |
-    sudo bundle install
-    sudo bundle exec rspec
+  - exec
+  - rspec
 
 # to run:
 #   docker-compose up
