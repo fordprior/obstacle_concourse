@@ -1,8 +1,8 @@
-# fly -t tutorial set-pipeline -c pipeline.yml -p helloworld
+# fly -t tutorial set-pipeline -c pipeline.yml -p obstacle_concourse
 
 ---
 resources:
-- name: flight-school
+- name: obstacle_concourse
   type: git
   source:
     uri: https://github.com/fordprior/obstacle_concourse
