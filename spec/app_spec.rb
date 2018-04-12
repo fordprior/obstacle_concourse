@@ -3,7 +3,7 @@ require 'rack/test'
 
 ENV['RACK_ENV'] = 'test'
 
-require '../app/app'
+require './app/app'
 
 RSpec.describe "The ObstacleConcourse application" do
   include Rack::Test::Methods
