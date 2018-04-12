@@ -19,9 +19,9 @@ RSpec.describe "The ObstacleConcourse application" do
     end
   end
 
-  it "doesn't return Hola Mundo" do
-    get '/'
-    expect(last_response.body).to eq('Hola Mundo')
+  it "returns the correct reversed phrase" do
+    get '/greg/reversed'
+    expect(last_response.body).to eq('gerg')
   end
   
 end
