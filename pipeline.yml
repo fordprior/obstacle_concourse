@@ -1,4 +1,8 @@
+# fly --target obstacle_concourse login --concourse-url http://127.0.0.1:8080
 # fly -t tutorial set-pipeline -c pipeline.yml -p obstacle_concourse
+# fly -t obstacle_concourse unpause-pipeline -p obstacle_concourse
+# ...then login to main with the UI and start the job
+
 
 ---
 resources:
