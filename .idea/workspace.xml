@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/../flight-school/lib/views/airport.erb" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../flight-school/lib/views/index.erb" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../flight-school/lib/views/no_airport.erb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/config.ru" afterPath="$PROJECT_DIR$/config.ru" />
       <change beforePath="$PROJECT_DIR$/spec/app_spec.rb" afterPath="$PROJECT_DIR$/spec/app_spec.rb" />
       <change beforePath="$PROJECT_DIR$/../s2i-ruby-container/2.4/test/rack-test-app/Gemfile.lock" afterPath="" />
     </list>
@@ -40,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.ru" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.ru" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.ru">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -80,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app_spec.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app_spec.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/app_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -144,8 +143,8 @@
         <option value="$PROJECT_DIR$/spec/spec_helper.rb" />
         <option value="$PROJECT_DIR$/spec/integration_spec.rb" />
         <option value="$PROJECT_DIR$/pipeline.yml" />
-        <option value="$PROJECT_DIR$/spec/app_spec.rb" />
         <option value="$PROJECT_DIR$/config.ru" />
+        <option value="$PROJECT_DIR$/spec/app_spec.rb" />
       </list>
     </option>
   </component>
@@ -260,12 +259,12 @@
       <option name="presentableId" value="Default" />
       <updated>1523378309073</updated>
       <workItem from="1523378310438" duration="4936000" />
-      <workItem from="1523448465880" duration="4853000" />
+      <workItem from="1523448465880" duration="4909000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9789000" />
+    <option name="totallyTimeSpent" value="9845000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -567,14 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/app_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../flight-school/spec/spec_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -611,6 +602,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/app_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
