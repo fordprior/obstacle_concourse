@@ -19,4 +19,9 @@ RSpec.describe "The ObstacleConcourse application" do
     end
   end
 
+  it "doesn't return Hola Mundo" do
+    get '/'
+    expect(last_response.body).to eq('Hola Mundo')
+  end
+  
 end
