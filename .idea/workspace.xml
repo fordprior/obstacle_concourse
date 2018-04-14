@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cea0778-e4d7-4ed7-b354-ef48b06af5a3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/obstacle_concourse.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/obstacle_concourse/Dockerfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/obstacle_concourse/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/obstacle_concourse/src/Gemfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/obstacle_concourse/src/Gemfile.lock" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/obstacle_concourse/src/app/app.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/obstacle_concourse/src/config.ru" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/obstacle_concourse/src/spec/app_spec.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/specs/integration_test_spec.rb" />
       <change beforePath="$PROJECT_DIR$/../flight-school/lib/radar.rb" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../flight-school/lib/views/airport.erb" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../flight-school/lib/views/index.erb" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../flight-school/lib/views/no_airport.erb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/app/app.rb" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/config.ru" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/spec/app_spec.rb" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../s2i-ruby-container/2.4/test/rack-test-app/Gemfile.lock" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -232,7 +213,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9977000" />
+    <option name="totallyTimeSpent" value="10053000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="800" extended-state="0" />
