@@ -1,4 +1,24 @@
-FROM     drecom/centos-base:latest
+FROM     centos:latest
+
+RUN yum install -y \
+    epel-release \
+    openssl-devel \
+    readline-devel\
+    zlib-devel \
+    wget \
+    curl \
+    git \
+    dtach \
+    vim \
+    hash-slinger \
+    bzip2 \
+    tar \
+    libffi-devel \
+    mysql \
+    mysql-devel \
+    libxslt-devel \
+&&  yum groupinstall "Development Tools" -y \
+&&  yum clean all
 
 ####### begin region install ruby #######
   RUN git clone git://github.com/rbenv/rbenv.git /usr/local/rbenv \
@@ -27,7 +47,6 @@ FROM     drecom/centos-base:latest
   &&  eval "$(rbenv init -)"; gem install bundler -f \
   &&  rm -rf /tmp/*
 ####### end region install ruby #######
-
 
 # install goss https://github.com/aelsabbahy/goss/releases/download/v0.3.5/goss-linux-386
   RUN curl -L https://github.com/aelsabbahy/goss/releases/download/v0.3.5/goss-linux-amd64 -o /usr/local/bin/goss
