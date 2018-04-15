@@ -1,3 +1,4 @@
+# Purpose: to test the service once it's started as part of the concourse pipeline checks
 # Usage: dgoss [run|edit] <docker_run_params>
 # Goss supports many check types, see documentation for a complete list
 # https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#available-tests
