@@ -7,6 +7,9 @@ RUN yum install -y \
     zlib-devel \
     wget \
     curl \
+    httpd \
+    openssh-server \
+    openssh-clients \
     git \
     dtach \
     vim \
